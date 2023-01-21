@@ -96,7 +96,7 @@ class SportsWalking(Training):
         """Получить количество затраченных калорий."""
         calories: float = ((self.CALORIES_WEIGHT_MULTIPLIER * self.weight
                            + ((self.get_mean_speed() * self.KMH_TO_MC)**2
-                           / (self.height / self.SM_TO_M))
+                            / (self.height / self.SM_TO_M))
                            * self.CALORIES_MEAN_SPEED_WEIGHT_MULTIPLIER
                            * self.weight) * self.duration * self.MIN_IN_HOUR)
         return calories
@@ -149,7 +149,8 @@ def main(training: Training) -> None:
 if __name__ == '__main__':
     packages = [('SWM', [720, 1, 80, 25, 40]),
                 ('RUN', [15000, 1, 75]),
-                ('WLK', [9000, 1, 75, 180]),]
+                ('WLK', [9000, 1, 75, 180]),
+                ]
 
     for workout_type, data in packages:
         training = read_package(workout_type, data)
